@@ -1,6 +1,17 @@
 # Exercises: Secure Implementation, Weak Entropy and Authentication Mechanisms
 
-## Exercise 1: Implement RSA without branches
+## Exercise 1: Weak Entropy
+
+I have a big problem: When preparing this exercise last Monday, I encrypted a
+very important file.  Unfortunately, I forgot to save the key, and now I cannot
+access the data anymore.  Can you help me decrypt it?
+
+This is the command that I used:
+```
+$ python encrypt.py plain.txt ciphertext.bin
+```
+
+## Exercise 2: Implement RSA without branches
 
 ## Objective
 
@@ -31,17 +42,6 @@ $$
 1. Reformulate the exponentiation algorithm to remove the branches
 2. Find a way to bound the number of iterations of the algorithm
 4. Implement the [Montgomery Ladder](https://en.wikipedia.org/wiki/Exponentiation_by_squaring#Montgomery's_ladder_technique) algorithm.
-
-## Exercise 2: Weak Entropy
-
-I have a big problem: When preparing this exercise last Monday, I encrypted a
-very important file.  Unfortunately, I forgot to save the key, and now I cannot
-access the data anymore.  Can you help me decrypt it?
-
-This is the command that I used:
-```
-$ python encrypt.py plain.txt ciphertext.bin
-```
 
 ## Exercise 3: Authentication Mechanisms
 
