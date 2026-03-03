@@ -57,7 +57,7 @@ Finally, install the `mitmproxy` certificate you downloaded previously in your *
 On Android, this can be done in the *Encryption & credentials* or *Certificates* part of the configuration, under the *Install a certificate from storage* option.
 This will remove any warnings about untrusted self-signed certificates for any of the web servers in the `192.168.3.0` subnet.
 
-## Exercise 3: Malicious-in-the-middle against HTTP in transparent mode
+## Exercise 3: Malicious-in-the-middle against HTTPS in transparent mode
 
 Change the network configuration of your *victim* device manually to remove the proxy and customize the router. On Android, this means changing the `IP Settings` to `Static`.
 Use the same `192.168.1/2.X` as the IP address, `192.168.1/2.Z` as the Gateway/DNS and `255.255.255.0` as the network mask.
@@ -84,7 +84,7 @@ Now run `mitmproxy` in _transparent_ mode.
 $ mitmproxy --ssl-insecure --mode transparent --showhost
 ```
 
-After that, `mitmproxy` should again receive all HTTP traffic from your *victim* device, so try accessing the Login page at `http://192.168.3.W/` and check that the credentials show up in a `POST` flow after they are submitted.
+After that, `mitmproxy` should again receive all HTTPS traffic from your *victim* device, so try accessing the Login page at `https://192.168.3.W/` and check that the credentials show up in a `POST` flow after they are submitted.
 If you are running `mitmproxy` in your host system directly (without a VM), make the same configurations above in your host machine firewall.
 
 **Observation**: If you **cannot** see flows in `mitmproxy`, try running the command below in the VM to bypass [a problem with the VirtualBox driver](https://security.stackexchange.com/questions/197453/mitm-using-arp-spoofing-with-kali-linux-running-on-virtualbox-with-bridged-wifi):
